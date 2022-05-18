@@ -2,7 +2,7 @@
 阅读rcore编写的操作系统内核
 
 ## todolist
-- [ ] chapter 1
+- [x] chapter 1
 - [ ] chapter 2
 - [ ] chapter 3
 - [ ] chapter 4
@@ -13,4 +13,5 @@
 - [ ] chapter 9
 
 ## features
+- [x] 彩色LOG打印
 - [ ] 批处理
