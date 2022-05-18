@@ -13,5 +13,5 @@
 - [ ] chapter 9
 
 ## features
-- [x] 彩色LOG打印
+- [x] 彩色LOG打印 使用crate `log`
 - [ ] 批处理
