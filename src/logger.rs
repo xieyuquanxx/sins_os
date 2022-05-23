@@ -9,9 +9,9 @@ struct SimpleLogger;
 
 /// 日志颜色
 enum LogColor {
-    ERROR = 31,
+    ERROR = 91,
     WARN = 93,
-    INFO = 34,
+    INFO = 35,
     DEBUG = 32,
     TRACE = 90,
 }

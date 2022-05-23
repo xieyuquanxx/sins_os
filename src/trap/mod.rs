@@ -6,7 +6,7 @@ use riscv::register::{
     stval, stvec,
 };
 
-use crate::{syscall::syscall, batch::run_next_app};
+use crate::{batch::run_next_app, syscall::syscall};
 
 pub use self::context::TrapContext;
 
@@ -28,10 +28,12 @@ pub fn init() {
 }
 
 #[no_mangle]
+/// Trap处理函数
 pub fn trap_handler(cx: &mut TrapContext) -> &mut TrapContext {
     let scause = scause::read();
     let stval = stval::read();
     match scause.cause() {
+        // 如果是用户的系统调用
         Trap::Exception(Exception::UserEnvCall) => {
             cx.sepc += 4;
             cx.x[10] = syscall(cx.x[17], [cx.x[10], cx.x[11], cx.x[12]]) as usize;

@@ -13,6 +13,8 @@ impl TrapContext {
         self.x[2] = sp;
     }
     /// 生成应用Trap上下文，并且调转到用户态执行应用程序
+    /// entry: 应用程序的入口地址
+    /// sp: 应用程序的栈顶地址
     pub fn app_init_context(entry: usize, sp: usize) -> Self {
         let mut sstatus = sstatus::read();
         sstatus.set_spp(SPP::User);
